@@ -1,5 +1,5 @@
 import { IconButton } from '@material-ui/core'
-import { CheckBox } from '@material-ui/icons'
+import { CheckBox, CheckBoxOutlineBlank } from '@material-ui/icons'
 import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
 import RedoIcon from '@material-ui/icons/Redo';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
@@ -13,6 +13,7 @@ import LocalOfferIcon from '@material-ui/icons/LocalOffer';
 import React from 'react'
 import './EmailList.scss'
 import { Section } from './Section';
+import { MailRow } from './MailRow';
 
 
 
@@ -21,7 +22,9 @@ export const EmailList = () => {
         <div className="emailList">
             <div className="emailList_setting">
                 <div className="emailList_setting__left">
-                    <CheckBox />
+                    <IconButton>
+                        <CheckBoxOutlineBlank />
+                    </IconButton>
                     <IconButton>
                         <ArrowDropDownIcon />
                     </IconButton>
@@ -51,6 +54,9 @@ export const EmailList = () => {
                 <Section Icon={InboxIcon} title="Primary" color="red" selected />
                 <Section Icon={PeopleIcon} title="Social" color="#1A73E8" />
                 <Section Icon={LocalOfferIcon} title="Promotions" color="green" />
+            </div>
+            <div className="emailList_list">
+                <MailRow title="Twitch" subject="hey fellow streamer" description="just a test" time="10pm" />
             </div>
         </div>
     )

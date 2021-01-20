@@ -1,16 +1,25 @@
 .emailList {
   flex: 1;
   overflow: scroll;
-
 }
 
-.emailList_setting{
-    display: flex;
-    justify-content: space-between;
-    position: sticky;
-    top: 0;
-    border-bottom: 1px solid whitesmoke;
-    background-color: white;
-    z-index: 999;
-    padding-right: 10px;
+.emailList_setting {
+  display: flex;
+  justify-content: space-between;
+  position: sticky;
+  align-items: center;
+  top: 0;
+  border-bottom: 1px solid whitesmoke;
+  background-color: white;
+  z-index: 999;
+  padding-right: 10px;
+}
+
+.emailList_section {
+  position: sticky;
+  top: 0;
+  display: flex;
+  border-bottom: 1px solid whitesmoke;
+  background-color: white;
+  z-index: 999;
 }
