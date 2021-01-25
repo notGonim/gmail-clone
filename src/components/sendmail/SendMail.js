@@ -5,6 +5,9 @@ import { Button } from '@material-ui/core';
 import { useForm } from 'react-hook-form';
 import { useDispatch } from 'react-redux';
 import { CloseMessage } from '../../actions/mailActions';
+import firebase from "firebase"
+import { db } from '../../firebase';
+
 
 export const SendMail = () => {
 
@@ -13,6 +16,14 @@ export const SendMail = () => {
 
     const onSubmit = (data) => {
         console.log(data)
+
+        db.collection("emails").add({
+            to: data.to,
+            subject: data.subject,
+            message: data.message,
+            timestamp: firebase.firestore.FieldValue.serverTimestamp()
+        })
+        dispatch(CloseMessage())
     }
     return (
         <div className="sendMail">

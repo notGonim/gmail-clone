@@ -1,4 +1,5 @@
 const intialState = {
+    selectMail: null,
     sendMessageIsOpen: false
 }
 

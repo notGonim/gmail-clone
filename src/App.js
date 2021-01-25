@@ -23,7 +23,8 @@ function App() {
             <Route path="/" exact component={EmailList} />
           </Switch>
         </div>
-        <SendMail />
+        {sendMessageIsOpen && <SendMail />
+        }
       </div>
     </Router>
   );
