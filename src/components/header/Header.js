@@ -6,7 +6,23 @@ import { Avatar, IconButton } from '@material-ui/core';
 import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
 import AppsIcon from '@material-ui/icons/Apps';
 import NotificationsIcon from '@material-ui/icons/Notifications';
+import { useSelector, useDispatch } from 'react-redux';
+import { LogOutAction } from '../../actions/UserAction';
+import { auth } from '../../firebase';
 export const Header = () => {
+
+    const { ...data } = useSelector(state => state.user)
+    const { displayName, email, photoURL } = data.user
+    const dispatch = useDispatch()
+
+
+    const signout = () => {
+        auth.signOut().then(() => {
+            dispatch(LogOutAction())
+        })
+    }
+
+
     return (
         <div className="header_container">
             <div className="header_container__left">
@@ -30,7 +46,7 @@ export const Header = () => {
                 <IconButton>
                     <NotificationsIcon />
                 </IconButton>
-                <Avatar />
+                <Avatar onClick={signout} src={photoURL}  className="avatar" />
             </div>
 
 
