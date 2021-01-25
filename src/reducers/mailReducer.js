@@ -15,8 +15,12 @@ const MailReducer = (state = intialState, action) => {
             return {
                 ...state,
                 sendMessageIsOpen: action.payLoad.mailOpen
-            }
-
+            };
+        case 'MAILDETAILS':
+            return {
+                ...state,
+                selectMail: action.payLoad.mail
+            };
         default:
             return { ...state };
     }

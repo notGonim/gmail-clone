@@ -9,8 +9,9 @@ import { useSelector } from 'react-redux';
 
 function App() {
 
-  const { sendMessageIsOpen } = useSelector(state => state.mail)
-  console.log(sendMessageIsOpen)
+  const { ...data } = useSelector(state => state.mail)
+  const isOpend = data.sendMessageIsOpen
+
 
   return (
     <Router>
@@ -23,8 +24,7 @@ function App() {
             <Route path="/" exact component={EmailList} />
           </Switch>
         </div>
-        {sendMessageIsOpen && <SendMail />
-        }
+        {isOpend && <SendMail />}
       </div>
     </Router>
   );

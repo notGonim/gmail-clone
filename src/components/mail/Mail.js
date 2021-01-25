@@ -17,12 +17,16 @@ import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 import LabelImportantIcon from '@material-ui/icons/LabelImportant';
 
 import { useHistory } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 
 
 export const Mail = () => {
 
     const history = useHistory()
+    const { ...data } = useSelector(state => state.mail)
+    const { id, title, subject, description, timeMessage } = data.selectMail
+    console.log(timeMessage)
 
     return (
         <div className="mail">
@@ -70,13 +74,13 @@ export const Mail = () => {
             </div>
             <div className="mail_body">
                 <div className="mail_body__header">
-                    <h2>Subject</h2>
+                    <h2>{subject}</h2>
                     <LabelImportantIcon className="mail_important" />
-                    <p>Title</p>
-                    <p className="mail_time">10pm</p>
+                    <p>{title}</p>
+                    <p className="mail_time">{timeMessage}</p>
                 </div>
                 <div className="mail_message">
-                    <p>this is the message</p>
+                    <p>{description}</p>
                 </div>
             </div>
         </div>

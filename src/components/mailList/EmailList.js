@@ -68,10 +68,9 @@ export const EmailList = () => {
                 <Section Icon={LocalOfferIcon} title="Promotions" color="green" />
             </div>
             <div className="emailList_list">
-
                 {emails.map(({ id, data: { to, subject, message, timestamp } }) => (
-                    <MailRow id={id} key={id} title={to} subject={subject}
-                        description={message} time={new Date(timestamp?.seconds * 1000).toUTCString} />
+                    < MailRow id={id} key={id} title={to} subject={subject}
+                        description={message} timeMessage={new Date(timestamp?.seconds * 1000).toUTCString()} />
                 ))}
             </div>
         </div>

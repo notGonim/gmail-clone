@@ -6,10 +6,7 @@ export const OpenMessage = () => dispatch => {
             mailOpen: true
         }
     })
-
 }
-
-
 
 export const CloseMessage = () => dispatch => {
 
@@ -17,6 +14,16 @@ export const CloseMessage = () => dispatch => {
         type: "CLOSEMESSAGE",
         payLoad: {
             mailOpen: false
+        }
+    })
+}
+
+
+export const mailDetails = ({ id, title, subject, description, timeMessage }) => dispatch => {
+    dispatch({
+        type: "MAILDETAILS",
+        payLoad: {
+            mail: { id, title, subject, description, timeMessage }
         }
     })
 
