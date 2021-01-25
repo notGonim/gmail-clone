@@ -1,4 +1,4 @@
-export const OpenMessage = dispatch => {
+export const OpenMessage = () => dispatch => {
 
     dispatch({
         type: "OPENMESSAGE",
@@ -11,7 +11,7 @@ export const OpenMessage = dispatch => {
 
 
 
-export const CloseMessage = dispatch => {
+export const CloseMessage = () => dispatch => {
 
     dispatch({
         type: "CLOSEMESSAGE",
